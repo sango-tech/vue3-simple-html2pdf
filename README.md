@@ -26,7 +26,7 @@ Vue.use(Vue3SimpleHtml2pdf);
 
 ```
 <vue3-simple-html2pdf
-  ref="vu3SimpleHtml2pdf"
+  ref="vue3SimpleHtml2pdf"
   :options="pdfOptions"
   :filename="exportFilename"
 >
@@ -122,7 +122,7 @@ table {
 Call start download pdf
 
 ```
-this.$refs.vu3SimpleHtml2pdf.download()
+this.$refs.vue3SimpleHtml2pdf.download()
 ```
 
 
