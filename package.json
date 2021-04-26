@@ -1,0 +1,51 @@
+{
+  "name": "vue3-simple-html2pdf",
+  "description": "Export to PDF using vue3 and html2pdf.js",
+  "version": "0.0.4",
+  "main": "src/index.js",
+  "author": "abinhho <binh@sango-tech.com>",
+  "contributors": [
+    "abinhho <binh@sango-tech.com>"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src",
+    "type.d.ts"
+  ],
+  "types": "./type.d.ts",
+  "keywords": [
+    "vue",
+    "vue html2pdf",
+    "vue3-simple-html2pdf",
+    "export pdf"
+  ],
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config rollup.config.js --format umd --file dist/vue3-simple-html2pdf.umd.js",
+    "build:es": "rollup --config rollup.config.js --format es --file dist/vue3-simple-html2pdf.esm.js",
+    "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/vue3-simple-html2pdf.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sango-tech/vue3-simple-html2pdf"
+  },
+  "dependencies": {
+    "html2pdf.js": "^0.9.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "rollup": "^0.66.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-uglify-es": "0.0.1",
+    "rollup-plugin-vue": "^4.3.2",
+    "vue": "^2.5.17",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
