@@ -1,7 +1,7 @@
 {
   "name": "vue3-simple-html2pdf",
   "description": "Export to PDF using vue3 and html2pdf.js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "src/index.js",
   "author": "abinhho <binh@sango-tech.com>",
   "contributors": [
@@ -31,7 +31,10 @@
     "url": "https://github.com/sango-tech/vue3-simple-html2pdf"
   },
   "dependencies": {
-    "html2pdf.js": "^0.9.2"
+    "html2pdf.js": "^0.9.2",
+    "jspdf": "^1.4.1",
+    "pdf-lib": "^1.6.0",
+    "downloadjs": "^1.4.7"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
