@@ -19,7 +19,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
     options: {
       type: Object,
       default: {
@@ -28,7 +27,7 @@ export default {
           type: 'jpeg',
           quality: 1,
         },
-        html2canvas: { scale: 1 },
+        html2canvas: { scale: 3 },
         jsPDF: {
           unit: 'mm',
           format: 'a4',
