@@ -1,11 +1,16 @@
 <script>
 /* eslint @typescript-eslint/no-var-requires: "off" */
 const html2pdf = require('html2pdf.js')
+const jsPDF = require('jspdf')
 
 import { h } from 'vue'
 
 export default {
   props: {
+    index: {
+      type: Number,
+      default: 1,
+    },
     filename: {
       type: String,
       default: 'mypdf-file.pdf',
@@ -38,12 +43,30 @@ export default {
   computed: {},
   methods: {
     download() {
-      const el = document.getElementById('Vue3SimpleHtml2pdf')
+      const el = document.getElementById(`Vue3SimpleHtml2pdf${this.index}`)
       if (!el) {
         return
       }
 
       html2pdf().from(el).set(this.options).save(this.filename)
+    },
+    async outImageSrc() {
+      const el = document.getElementById(`Vue3SimpleHtml2pdf${this.index}`)
+      if (!el) {
+        return
+      }
+
+      const image = await html2pdf().from(el).set(this.options).outputImg()
+
+      const outputType = 'blob'
+      const pageSize = jsPDF.getPageSize(this.options.jsPDF)
+      const x = -2
+      const y = -2
+      const width = pageSize.width
+      const height = pageSize.height
+      const doc = new jsPDF(this.options.jsPDF)
+      doc.addImage(image.src, 'jpeg', x, y, width, height, '')
+      return doc.output(outputType)
     },
   },
   render() {
@@ -51,7 +74,7 @@ export default {
       'div',
       {
         class: 'vue3-simple-html2pdf',
-        id: 'Vue3SimpleHtml2pdf',
+        id: `Vue3SimpleHtml2pdf${this.index}`,
       },
       this.$slots.default()[0]
     )
