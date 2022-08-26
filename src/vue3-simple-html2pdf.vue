@@ -1,7 +1,6 @@
 <script>
-/* eslint @typescript-eslint/no-var-requires: "off" */
-const html2pdf = require('html2pdf.js')
-const jsPDF = require('jspdf')
+import jsPDF from 'jspdf'
+import html2pdf from 'html2pdf.js'
 
 import { h } from 'vue'
 
