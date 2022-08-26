@@ -4,6 +4,10 @@
 - Easy to custom any PDF style because it will be export from real html.
 - Can use custom css style for pdf page using vue style.
 
+# Example sanbox code
+
+https://codesandbox.io/s/vue3-simple-html2pdf-jxy2uz
+
 # Install
 
 ```
