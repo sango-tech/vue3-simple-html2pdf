@@ -1,0 +1,1 @@
+import Vue3SimpleHtml2pdf from"vue3-simple-html2pdf/src/vue3-simple-html2pdf";const install=function(l){l.component("Vue3SimpleHtml2pdf",Vue3SimpleHtml2pdf)};var index={install:install};export default index;
